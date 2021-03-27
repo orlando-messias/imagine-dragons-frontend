@@ -1,0 +1,81 @@
+.card {
+  width: 320px;
+  height: 380px;
+  background-color: #fdba4e;
+  margin: 20px 10px;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.cardTitle {
+  display: flex;
+  justify-content: flex-start;
+  background-color: #fac775;
+  align-items: center;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.cardTitle h3 {
+  margin-left: 20px;
+}
+
+.cardTitle img {
+  margin-left: 10px;
+}
+
+.avatar {
+  width: 60px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.cardDescription {
+  width: 100%;
+  background-color: rgba(250, 199, 116, 0.5);
+  color: rgb(65, 65, 65);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border: 1px solid #fde3b8;
+}
+
+.cardDescription .moreDetails {
+  align-self: flex-end;
+  padding-right: 5px;
+  font-size: 14px;
+  color: blue;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.cardDescription p {
+ padding-left: 10px;
+}
+
+.createdAt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  margin-top: 70px;
+}
+
+.iconFooter {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.iconFooter:hover {
+  color: white
+}
