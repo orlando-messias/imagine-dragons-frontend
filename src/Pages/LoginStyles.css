@@ -41,7 +41,7 @@
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
-  height: 220px;
+  height: 250px;
 }
 
 .fields {
@@ -64,7 +64,8 @@
 
 .field:focus {
   outline: none;
-  box-shadow: 0 5px 5px -6px red;
+  /* box-shadow: 0 5px 5px -6px red; */
+  border-bottom: 2px solid red;
 }
 
 .formButton {
@@ -94,33 +95,39 @@ button:disabled {
 
 .error {
   color: red;
-  border-bottom: 2px solid red;
+  border-bottom: 1px solid red;
 }
 
 .noError {
-  color: blue;
+  color: rgba(0, 0, 255, 0.6);
   border-bottom: 1px solid rgb(85, 85, 243);
-
 }
 
 .noError:focus {
+  border-bottom: 1px solid rgb(85, 85, 243);
   box-shadow: 0 5px 5px -7px blue;
 }
 
+.errorSpan {
+  font-size: 12px;
+  color: red;
+  margin-top: 0px;
+}
+
 ::-webkit-input-placeholder {
-  color: rgba(255, 0, 0, 0.6);
+  color: rgba(255, 0, 0, 0.7);
   font-size: 11px;
 }
 
 :-moz-placeholder { /* Firefox 18- */
-  color: #fa6e6e;
+  color: rgba(255, 0, 0, 0.7);
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-  color: #fa6e6e;  
+  color: rgba(255, 0, 0, 0.7);
 }
 
 :-ms-input-placeholder {  
-  color: #fa6e6e;  
+  color: rgba(255, 0, 0, 0.7);
 }
 

@@ -6,7 +6,7 @@ import { loginUser, errorToFalse } from '../store/Login/Login.action';
 // react-icons
 import { BsFillShieldLockFill } from 'react-icons/bs';
 // services
-import { loginValidation } from '../services/loginServices';
+import { passwordValidation, emailValidation } from '../services/loginServices';
 // styles
 import './LoginStyles.css';
 import { useHistory } from 'react-router';
@@ -33,11 +33,11 @@ export default function Login() {
   const history = useHistory();
 
   useEffect(() => {
-    loginValidation(userLogin.email)
+    emailValidation(userLogin.email)
       ? setErrorEmail(false)
       : setErrorEmail(true);
 
-    loginValidation(userLogin.password)
+    passwordValidation(userLogin.password)
       ? setErrorPassword(false) :
       setErrorPassword(true);
   }, [userLogin]);
@@ -50,7 +50,7 @@ export default function Login() {
     if (error) {
       setUserLogin({ email: '', password: '' });
       console.log('ERR ', errorMessage);
-      dispatch(errorToFalse());
+      // dispatch(errorToFalse());
     }
   }, [success, error, dispatch]);
 
@@ -64,6 +64,7 @@ export default function Login() {
 
   const login = () => {
     const { email, password } = userLogin;
+    dispatch(errorToFalse());
     console.log('HERE ', email, password);
     dispatch(loginUser(email, password))
   };
@@ -105,17 +106,19 @@ export default function Login() {
             />
           </div>
 
+          {error && <span className="errorSpan">{errorMessage}</span>}
+
+
           <button
             className="formButton"
             onClick={login}
             disabled={
-              !(loginValidation(userLogin.email) && loginValidation(userLogin.password))
+              !(emailValidation(userLogin.email) && passwordValidation(userLogin.password))
             }
           >
             Login
         </button>
         </div>
-
       </div>
     </div>
   );
