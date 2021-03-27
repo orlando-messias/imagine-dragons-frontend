@@ -59,29 +59,68 @@
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: 1px solid rgb(204, 203, 203);
   font-size: 14px;
 }
 
 .field:focus {
   outline: none;
-  border-bottom: 2px solid rgb(165, 165, 165);
-  box-shadow: 1px 2px 4px gainsboro;
+  box-shadow: 0 5px 5px -6px red;
 }
 
 .formButton {
   width: 150px;
   padding: 8px 5px;
-  color: #ffb338;
+  background-color: #ffb338;
   font-weight: bold;
+  color: white;
   border: 1px solid #ffb338;
   cursor: pointer;
-  background-color: white;
   border-radius: 30px;
   transition: ease-in 0.2s
 }
 
-.formButton:hover {
-  background-color: #ffb338;
-  color: white;
+.formButton:enabled:hover {
+  background-color: white;
+  color: #ffb338;
+  border: 2px solid #ffb338;
 }
+
+button:disabled {
+  border:1px solid gainsboro;
+  color: gainsboro;
+  cursor: initial;
+  background-color: white;
+}
+
+.error {
+  color: red;
+  border-bottom: 2px solid red;
+}
+
+.noError {
+  color: blue;
+  border-bottom: 1px solid rgb(85, 85, 243);
+
+}
+
+.noError:focus {
+  box-shadow: 0 5px 5px -7px blue;
+}
+
+::-webkit-input-placeholder {
+  color: rgba(255, 0, 0, 0.6);
+  font-size: 11px;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: #fa6e6e;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  color: #fa6e6e;  
+}
+
+:-ms-input-placeholder {  
+  color: #fa6e6e;  
+}
+
