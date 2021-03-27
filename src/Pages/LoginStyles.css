@@ -7,8 +7,8 @@
 }
 
 .loginContainer {
-  width: 340px;
-  height: 390px;
+  width: 320px;
+  height: 420px;
   display: flex;
   flex-direction: column;
   align-items: center;
