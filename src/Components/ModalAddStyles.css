@@ -1,0 +1,102 @@
+.modalAdd {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContainer {
+  width: 600px;
+  height: 400px;
+  padding: 10px 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #fafafa;
+  z-index: 2;
+  border-radius: 5px;
+}
+
+.modalAddHeader {
+  display: flex;
+  align-items: center;
+  background-color: #e1392c;
+  justify-content: space-between;
+  width: 100%;
+  height: 80px;
+  padding-left: 30px;
+  color: white;
+}
+
+.closeIcon {
+  display: flex;
+  font-size: 34px;
+  margin-right: 40px;
+  cursor: pointer;
+}
+
+.closeIcon:hover {
+  opacity: 0.9;
+}
+
+.modalContainer h2 {
+  font-family: 'Teko', sans-serif;
+  letter-spacing: 2px;
+  font-size: 30px;
+}
+
+.modalFields {
+  display: flex;
+  width: 85%;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100px;
+  margin: 20px;
+  /* border: 1px solid gainsboro; */
+  padding: 35px 20px;
+  border-radius: 5px;
+}
+
+.modalFields .field {
+  width: 90%;
+  background-color: #fafafa;
+}
+
+.modalFields .select {
+  width: 70%;
+  height: 37px;
+  cursor: pointer;
+  outline: none;
+  font-weight: bold;
+}
+
+.modalAddButton {
+  font-family: 'Teko', sans-serif;
+    color: rgb(255, 255, 255);
+    padding: 5px 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    background-color: red;
+    font-size: 18px;
+    cursor: pointer;
+    width: 100px;
+    transition: ease-in 0.3s;
+}
+
+.modalAddButton:hover {
+  background-color: rgb(236, 106, 106);
+}
+
+.modalFooter {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 40px;
+}
