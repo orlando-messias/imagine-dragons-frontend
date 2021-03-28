@@ -1,0 +1,81 @@
+.dragonDetailContainer {
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  /* background-color: white; */
+}
+
+.mainHeader {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  background-color: gold;
+  align-items: center;
+  height: 180px;
+}
+
+.fire {
+  /* background-color: greenyellow; */
+  height: 180px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 200px;
+  /* flex-direction: column; */
+}
+
+.dragonImg {
+  width: 150px;
+  margin: 0 30px;
+}
+
+.detailTitle {
+  margin: 0;
+  font-family: 'Teko', sans-serif;
+  font-size: 40px;
+  letter-spacing: 3px;
+}
+
+.header {
+  font-family: 'Teko', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header p {
+  margin: 0;
+  font-size: 40px;
+}
+
+.header span {
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.detailDescription {
+  position: relative;
+  margin: 30px;
+  /* top: -80px; */
+  width: 350px;
+  color: gray;
+  height: 200px;
+  overflow-y: scroll;
+  border: 1px solid gainsboro;
+  padding: 5px 10px;
+}
+
+.detailCreatedAt {
+  font-weight: bold;
+}
+
+
+@media(max-width: 800px) {
+  .dragonDetailContainer {
+    width: 100%;
+  }
+}

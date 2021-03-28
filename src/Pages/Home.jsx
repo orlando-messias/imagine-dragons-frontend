@@ -13,6 +13,8 @@ export default function Home() {
       .catch(e => console.log(e));
   }, []);
 
+  if(dragons.length === 0) return <div>LOADING...</div>
+
 
   return (
     <div className="homeContainer">

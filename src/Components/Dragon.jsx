@@ -12,18 +12,18 @@ import avatar from '../assets/dragon.jpg';
 
 
 export default function Dragon({ dragon }) {
-  // get date information
-  const createdDate = dragon.createdAt.split('-');
-  const day = createdDate[2].split('T')[0];
-  const month = createdDate[1];
-  const year = createdDate[0];
+  // format date from createdAt
+  const createdAt = dragon.createdAt.split('-');
+  const day = createdAt[2].substr(0, 2);
+  const month = createdAt[1];
+  const year = createdAt[0];
+  const newFormatDate = `${day}/${month}/${year}`;
 
   const history = useHistory();
 
   const handleClick = (id) => {
     history.push(`/detail/${id}`);
-  };
-
+  }
 
   return (
     <div className="card">
@@ -37,12 +37,16 @@ export default function Dragon({ dragon }) {
 
       <div className="cardDescription">
         <p>Description</p>
-        <p className="moreDetails" onClick={() => handleClick(dragon.id)}>...more Details</p>
+        <p
+          className="moreDetails"
+          onClick={() => handleClick(dragon.id)}
+        >
+          ...more Details
+        </p>
       </div>
 
-
       <div className="footer">
-        <p className="createdAt"><AiTwotoneCalendar /> {`${day}/${month}/${year}`}</p>
+        <p className="createdAt"><AiTwotoneCalendar /> {newFormatDate}</p>
         <div>
           <GrEdit className="iconFooter" />
           <RiDeleteBin6Line className="iconFooter" />
