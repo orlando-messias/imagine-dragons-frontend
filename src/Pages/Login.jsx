@@ -50,7 +50,6 @@ export default function Login() {
     if (error) {
       setUserLogin({ email: '', password: '' });
       console.log('ERR ', errorMessage);
-      // dispatch(errorToFalse());
     }
   }, [success, error, dispatch]);
 
@@ -72,9 +71,7 @@ export default function Login() {
   // preloader while is fetching
   if (isFetching) {
     return (
-      <div>
-        <h3>LOADING...</h3>
-      </div>
+      <div className="loading">LOADING...</div>
     );
   }
 
@@ -91,6 +88,7 @@ export default function Login() {
             <input
               name="email"
               type="text"
+              autoFocus
               value={userLogin.email}
               onChange={handleInputChange}
               className={`field ${errorEmail ? 'error' : 'noError'}`}

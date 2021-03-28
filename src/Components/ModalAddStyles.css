@@ -36,13 +36,9 @@
 
 .closeIcon {
   display: flex;
-  font-size: 34px;
+  font-size: 36px;
   margin-right: 40px;
   cursor: pointer;
-}
-
-.closeIcon:hover {
-  opacity: 0.9;
 }
 
 .modalContainer h2 {
@@ -84,7 +80,7 @@
     border: none;
     border-radius: 5px;
     background-color: red;
-    font-size: 18px;
+    font-size: 20px;
     cursor: pointer;
     width: 100px;
     transition: ease-in 0.3s;

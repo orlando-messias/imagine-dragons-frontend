@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Dragon from '../Components/Dragon';
+import DragonCard from '../Components/DragonCard';
 import ModalAdd from '../Components/ModalAdd';
 import apiDragons from '../services/apiDragons';
 
@@ -17,7 +17,12 @@ export default function Home() {
       .catch(e => console.log(e));
   }, [showModalAdd]);
 
-  if (dragons.length === 0) return <div>LOADING...</div>
+  // preloader while is fetching
+  if (dragons.length === 0) {
+    return (
+      <div className="loading">LOADING...</div>
+    );
+  }
 
   const handleAddButtonClick = () => {
     setShowModalAdd(true);
@@ -27,11 +32,11 @@ export default function Home() {
     <div className="homeContainer">
       <div className="homeHeader">
         <h2>DRAGONS CARD</h2>
-        <BsPlusSquareFill className="iconPlus" onClick={handleAddButtonClick}/>
+        <BsPlusSquareFill className="iconPlus" onClick={handleAddButtonClick} />
       </div>
       <div className="cardContainer">
         {dragons.map((dragon, index) => (
-          <Dragon key={index} dragon={dragon} />
+          <DragonCard key={index} dragon={dragon} />
         ))}
 
       </div>

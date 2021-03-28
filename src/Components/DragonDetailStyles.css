@@ -1,66 +1,94 @@
 .dragonDetailContainer {
   display: flex;
   width: 80%;
-  justify-content: space-around;
+  justify-content: flex-start;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
-  /* background-color: white; */
+  min-height: 100vh;
+  background-color: white;
 }
 
 .mainHeader {
   display: flex;
   justify-content: flex-start;
   width: 100%;
-  background-color: gold;
+  background-color: #e1392c;
   align-items: center;
-  height: 180px;
+  height: 150px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
 
-.fire {
-  /* background-color: greenyellow; */
-  height: 180px;
+.mainHeader .dragonImg {
+  width: 130px;
+  margin: 0 30px;
+  border-radius: 50%;
+}
+
+.mainHeader .header {
+  height: 130px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  width: 200px;
-  /* flex-direction: column; */
+  width: 250px;
+  padding-bottom: 15px;
 }
 
-.dragonImg {
-  width: 150px;
-  margin: 0 30px;
+.mainHeader .header .headerIcon {
+  font-size: 40px;
+  margin-right: 10px;
+  color: white;
 }
 
-.detailTitle {
+.mainHeader .header .headerTitle {
   margin: 0;
   font-family: 'Teko', sans-serif;
   font-size: 40px;
   letter-spacing: 3px;
 }
 
-.header {
+.mainHeader .header .headerInfo {
   font-family: 'Teko', sans-serif;
-  margin: 0;
-  padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
-.header p {
+.mainHeader .header .headerInfo p {
   margin: 0;
   font-size: 40px;
 }
 
-.header span {
-  color: red;
-  font-size: 20px;
+.mainHeader .header .headerInfo span {
+  color: white;
+  font-size: 24px;
   font-weight: bold;
   margin: 0;
+  letter-spacing: 2px;
+}
+
+.back {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 15px 5px 3px 0;
+  cursor: pointer;
+}
+
+.back:hover {
+  opacity: 0.7;
+}
+
+.backArrow {
+  font-size: 34px;
+  color: #e1392c;
+  margin-right: 5px;
 }
 
 .detailDescription {
-  position: relative;
-  margin: 30px;
-  /* top: -80px; */
+  margin: 60px 0;
   width: 350px;
   color: gray;
   height: 200px;
@@ -69,13 +97,101 @@
   padding: 5px 10px;
 }
 
+.detailFooter {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffb338;
+  height: 50px;
+}
+
+.detailFooterCalendar {
+  position:relative;
+  top: -20px;
+  left: -100px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.detailFooterCalendar .calendar {
+  font-size: 60px;
+}
+
 .detailCreatedAt {
   font-weight: bold;
+  font-size: 20px;
+  font-family: 'Teko', sans-serif;
 }
 
 
 @media(max-width: 800px) {
   .dragonDetailContainer {
     width: 100%;
+  }
+
+  .mainHeader .dragonImg {
+    width: 90px;
+  }
+
+  .mainHeader {
+    height: 120px;
+  }
+
+  .mainHeader .header {
+    height: 100px;
+  }
+
+  .mainHeader .header .headerTitle {
+    font-family: 'Teko', sans-serif;
+    font-size: 30px;
+    letter-spacing: 3px;
+  }
+  
+  .mainHeader .header .headerInfo p {
+    margin: 0;
+    font-size: 30px;
+  }
+  
+  .mainHeader .header .headerInfo span {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    letter-spacing: 2px;
+  }
+}
+
+@media(max-width: 396px) {
+  .mainHeader .header .headerIcon{
+    display: none;
+  }
+
+  .detailDescription {
+    width: 90%;
+  }
+
+  .detailFooterCalendar {
+    left: -20px;
+  }
+
+  .detailFooterCalendar .calendar {
+    font-size: 40px;
+  }
+  
+}
+
+@media(max-width: 334px) {
+  .mainHeader .dragonImg {
+    width: 60px;
+  }
+
+  .mainHeader .header .headerTitle {
+    font-size: 28px;
   }
 }

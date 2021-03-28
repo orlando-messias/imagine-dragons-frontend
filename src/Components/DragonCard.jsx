@@ -6,12 +6,12 @@ import { AiTwotoneCalendar } from 'react-icons/ai'
 import { FaPencilAlt } from 'react-icons/fa'
 import { RiDeleteBin6Line } from 'react-icons/ri'
 // styles
-import './DragonStyles.css';
+import './DragonCardStyles.css';
 // images
 import avatar from '../assets/dragon.jpg';
 
 
-export default function Dragon({ dragon }) {
+export default function DragonCard({ dragon }) {
   // format date from createdAt
   const createdAt = dragon.createdAt.split('-');
   const day = createdAt[2].substr(0, 2);

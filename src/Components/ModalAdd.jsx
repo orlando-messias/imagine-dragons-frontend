@@ -1,11 +1,13 @@
+// react
 import React, { useState, useEffect } from 'react';
-
-
+// react icons
 import { AiFillCloseCircle } from 'react-icons/ai';
+// services
 import apiDragons from '../services/apiDragons';
 import { modalValidation } from '../services/modalServices';
-
+// styles
 import './ModalAddStyles.css';
+
 
 export default function ModalAdd({ setShowModalAdd }) {
   const [dragon, setDragon] = useState({
@@ -34,10 +36,8 @@ export default function ModalAdd({ setShowModalAdd }) {
 
   const handleAddNew = () => {
     apiDragons.post('/', dragon)
-      .then(() => {
-        handleCloseModal(false);
-      })
-      .catch(e => console.log(e))
+      .then(() =>handleCloseModal(false))
+      .catch(e => console.log(e));
   }
 
   const handleCloseModal = () => {
@@ -47,10 +47,12 @@ export default function ModalAdd({ setShowModalAdd }) {
   return (
     <div className="modalAdd">
       <div className="modalContainer">
+
         <div className="modalAddHeader">
           <h2>New Dragon</h2>
           <AiFillCloseCircle className="closeIcon" onClick={handleCloseModal} />
         </div>
+
         <div className="modalFields">
           <input
             type="text"
@@ -73,6 +75,7 @@ export default function ModalAdd({ setShowModalAdd }) {
             <option value="Wind">Wind</option>
           </select>
         </div>
+
         <div className="modalFooter">
           <button
             className="modalAddButton"
@@ -84,6 +87,7 @@ export default function ModalAdd({ setShowModalAdd }) {
             Add New
           </button>
         </div>
+
       </div>
     </div>
   )

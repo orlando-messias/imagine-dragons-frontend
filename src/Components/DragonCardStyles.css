@@ -65,10 +65,14 @@
   align-self: flex-end;
   padding-right: 5px;
   font-size: 14px;
-  color: #e1392c;
+  color: red;
   font-weight: bold;
   margin-top: 40px;
   cursor: pointer;
+}
+
+.cardDescription .moreDetails:hover {
+  color: white;
 }
 
 .cardDescription p {
