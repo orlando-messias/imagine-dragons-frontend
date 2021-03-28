@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import DragonCard from '../Components/DragonCard';
 import ModalAdd from '../Components/ModalAdd';
+import ModalDelete from '../Components/ModalDelete';
 import apiDragons from '../services/apiDragons';
 
 import { BsPlusSquareFill } from 'react-icons/bs';
@@ -10,14 +11,16 @@ import './HomeStyles.css'
 export default function Home() {
   const [dragons, setDragons] = useState([]);
   const [showModalAdd, setShowModalAdd] = useState(false);
+  const [showModalDelete, setShowModalDelete] = useState(false);
   const [modo, setModo] = useState('');
   const [idDragon, setIdDragon] = useState('');
+  const [dragon, setDragon] = useState({});
 
   useEffect(() => {
     apiDragons.get('/')
       .then(response => setDragons(response.data))
       .catch(e => console.log(e));
-  }, [showModalAdd]);
+  }, [showModalAdd, showModalDelete]);
 
   // preloader while is fetching
   if (dragons.length === 0) {
@@ -47,6 +50,8 @@ export default function Home() {
             setModo={setModo}
             idDragon={idDragon}
             setIdDragon={setIdDragon}
+            setShowModalDelete={setShowModalDelete}
+            setDragon={setDragon}
           />
         ))}
 
@@ -54,6 +59,9 @@ export default function Home() {
 
       {showModalAdd && (
         <ModalAdd setShowModalAdd={setShowModalAdd} modo={modo} idDragon={idDragon} />
+      )};
+      {showModalDelete && (
+        <ModalDelete setShowModalDelete={setShowModalDelete} dragon={dragon} />
       )};
     </div>
   );

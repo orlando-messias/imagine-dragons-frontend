@@ -45,13 +45,13 @@ export default function ModalAdd({ setShowModalAdd, modo, idDragon }) {
   const handleAddNew = () => {
     if(modo === 'add') {
       apiDragons.post('/', dragon)
-        .then(() =>handleCloseModal(false))
+        .then(() =>setShowModalAdd(false))
         .catch(e => console.log(e));
     }
 
     if(modo === 'edit') {
       apiDragons.put(`/${dragon.id}`, dragon)
-      .then(() =>handleCloseModal(false))
+      .then(() =>setShowModalAdd(false))
       .catch(e => console.log(e));
     }
   };

@@ -11,7 +11,7 @@ import './DragonCardStyles.css';
 import avatar from '../assets/dragon.jpg';
 
 
-export default function DragonCard({ dragon, setShowModalAdd, modo, setModo, setIdDragon }) {
+export default function DragonCard({ dragon, setShowModalAdd, setShowModalDelete, setDragon, setModo, setIdDragon }) {
   // format date from createdAt
   const createdAt = dragon.createdAt.split('-');
   const day = createdAt[2].substr(0, 2);
@@ -30,6 +30,12 @@ export default function DragonCard({ dragon, setShowModalAdd, modo, setModo, set
     setIdDragon(id);
     setModo('edit');
   };
+
+  const handleDeleteButtonClick = (dragon) => {
+    setShowModalDelete(true);
+    setDragon(dragon);
+    console.log(dragon);
+  }
 
   return (
     <div className="card">
@@ -55,7 +61,7 @@ export default function DragonCard({ dragon, setShowModalAdd, modo, setModo, set
         <p className="createdAt"><AiTwotoneCalendar /> {newFormatDate}</p>
         <div className="iconsFooter">
           <FaPencilAlt className="iconFooter" onClick={() => handleEditButtonClick(dragon.id)}/>
-          <RiDeleteBin6Line className="iconFooter" />
+          <RiDeleteBin6Line className="iconFooter" onClick={() => handleDeleteButtonClick(dragon)} />
         </div>
       </div>
     </div>
