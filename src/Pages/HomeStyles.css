@@ -1,0 +1,44 @@
+.homeContainer {
+  max-width: 1000px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 10px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cardContainer {
+  margin: 85px auto;
+  display: flex;
+  width: 90%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: white;
+  border-radius: 14px;
+}
+
+.homeHeader {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.homeHeader h2 {
+  font-family: 'Teko', sans-serif;
+  font-size: 36px;
+  letter-spacing: 3px;
+  margin-bottom: 0;
+}
+
+.iconPlus {
+  font-size: 34px;
+  cursor: pointer;
+}
+
+.iconPlus:hover {
+  color: #e1392c
+}

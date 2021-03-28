@@ -3,7 +3,7 @@ import React from 'react';
 import { useHistory } from 'react-router';
 // react-icons
 import { AiTwotoneCalendar } from 'react-icons/ai'
-import { GrEdit } from 'react-icons/gr'
+import { FaPencilAlt } from 'react-icons/fa'
 import { RiDeleteBin6Line } from 'react-icons/ri'
 // styles
 import './DragonStyles.css';
@@ -29,11 +29,11 @@ export default function Dragon({ dragon }) {
     <div className="card">
 
       <div className="cardTitle">
-        <img src={avatar} className="avatar" alt="Avatar" />
+        <img src={avatar} className="cardAvatar" alt="Avatar" />
         <h3>{dragon.name}</h3>
       </div>
 
-      <p>{dragon.type}</p>
+      <p className="cardPType">Type | Strong Point: <span className="cardSpanType">{dragon.type}</span></p>
 
       <div className="cardDescription">
         <p>Description</p>
@@ -41,14 +41,14 @@ export default function Dragon({ dragon }) {
           className="moreDetails"
           onClick={() => handleClick(dragon.id)}
         >
-          ...more Details
+          ... more Details
         </p>
       </div>
 
-      <div className="footer">
+      <div className="cardFooter">
         <p className="createdAt"><AiTwotoneCalendar /> {newFormatDate}</p>
-        <div>
-          <GrEdit className="iconFooter" />
+        <div className="iconsFooter">
+          <FaPencilAlt className="iconFooter" />
           <RiDeleteBin6Line className="iconFooter" />
         </div>
       </div>

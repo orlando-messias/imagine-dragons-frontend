@@ -14,22 +14,40 @@
   justify-content: flex-start;
   background-color: #fac775;
   align-items: center;
-  padding: 8px;
+  padding: 0;
   border-radius: 5px;
+  height: 75px;
 }
 
 .cardTitle h3 {
   margin-left: 20px;
+  font-size: 28px;
+  font-family: 'Teko', sans-serif;
+  letter-spacing: 2px;
 }
 
 .cardTitle img {
   margin-left: 10px;
 }
 
-.avatar {
+.cardAvatar {
   width: 60px;
   border-radius: 50%;
   border: 1px solid black;
+}
+
+.cardPType {
+  font-size: 14px;
+}
+
+.cardSpanType {
+  font-family: 'Teko', sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  background-color: white;
+  padding: 2px 15px 0px 15px;
+  margin: 0 8px;
+  border-radius: 20px;
 }
 
 .cardDescription {
@@ -47,8 +65,9 @@
   align-self: flex-end;
   padding-right: 5px;
   font-size: 14px;
-  color: blue;
-  margin-top: 30px;
+  color: #e1392c;
+  font-weight: bold;
+  margin-top: 40px;
   cursor: pointer;
 }
 
@@ -56,26 +75,35 @@
  padding-left: 10px;
 }
 
-.createdAt {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100px;
-}
-
-.footer {
+.cardFooter {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 16px;
-  margin-top: 70px;
+  margin-top: 50px;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 100%;
+  border-radius: 5px;
 }
 
-.iconFooter {
+.cardFooter .createdAt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100px;
+  margin-left: 10px;
+}
+
+.cardFooter .iconsFooter {
+  margin-right: 10px;
+}
+
+.cardFooter .iconFooter {
   margin-left: 10px;
   cursor: pointer;
+  font-size: 18px;
 }
 
-.iconFooter:hover {
+.cardFooter .iconFooter:hover {
   color: white
 }

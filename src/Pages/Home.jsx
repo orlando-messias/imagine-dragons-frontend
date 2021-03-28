@@ -3,11 +3,13 @@ import Dragon from '../Components/Dragon';
 import ModalAdd from '../Components/ModalAdd';
 import apiDragons from '../services/apiDragons';
 
-import './Home.css'
+import { BsPlusSquareFill } from 'react-icons/bs';
+
+import './HomeStyles.css'
 
 export default function Home() {
   const [dragons, setDragons] = useState([]);
-  const [showModalAdd, setShowModalAdd] = useState(true);
+  const [showModalAdd, setShowModalAdd] = useState(false);
 
   useEffect(() => {
     apiDragons.get('/')
@@ -17,10 +19,16 @@ export default function Home() {
 
   if (dragons.length === 0) return <div>LOADING...</div>
 
+  const handleAddButtonClick = () => {
+    setShowModalAdd(true);
+  }
 
   return (
     <div className="homeContainer">
-      <h2>DRAGONS CARD</h2>
+      <div className="homeHeader">
+        <h2>DRAGONS CARD</h2>
+        <BsPlusSquareFill className="iconPlus" onClick={handleAddButtonClick}/>
+      </div>
       <div className="cardContainer">
         {dragons.map((dragon, index) => (
           <Dragon key={index} dragon={dragon} />
@@ -29,8 +37,8 @@ export default function Home() {
       </div>
 
       {showModalAdd && (
-        <ModalAdd setShowModalAdd={setShowModalAdd}/>
-      )}; 
+        <ModalAdd setShowModalAdd={setShowModalAdd} />
+      )};
     </div>
   );
 };
