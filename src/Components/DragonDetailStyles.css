@@ -29,10 +29,15 @@
 .mainHeader .header {
   height: 130px;
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 250px;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 300px;
   padding-bottom: 15px;
+}
+
+.mainHeader .header .headerTitles {
+  display: flex;
+  align-items: center;
 }
 
 .mainHeader .header .headerIcon {
@@ -152,7 +157,7 @@
     font-size: 30px;
     letter-spacing: 3px;
   }
-  
+
   .mainHeader .header .headerInfo p {
     margin: 0;
     font-size: 30px;
@@ -167,7 +172,7 @@
   }
 }
 
-@media(max-width: 396px) {
+@media(max-width: 415px) {
   .mainHeader .header .headerIcon{
     display: none;
   }
@@ -186,12 +191,16 @@
   
 }
 
-@media(max-width: 334px) {
+@media(max-width: 360px) {
   .mainHeader .dragonImg {
     width: 60px;
   }
 
   .mainHeader .header .headerTitle {
     font-size: 28px;
+  }
+
+  .detailFooter {
+    height: 30px;
   }
 }

@@ -111,6 +111,7 @@ button:disabled {
   font-size: 12px;
   color: #e1392c;
   margin-top: 0px;
+  font-weight: bold;
 }
 
 ::-webkit-input-placeholder {

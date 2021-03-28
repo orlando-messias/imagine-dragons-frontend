@@ -10,6 +10,8 @@ import './HomeStyles.css'
 export default function Home() {
   const [dragons, setDragons] = useState([]);
   const [showModalAdd, setShowModalAdd] = useState(false);
+  const [modo, setModo] = useState('');
+  const [idDragon, setIdDragon] = useState('');
 
   useEffect(() => {
     apiDragons.get('/')
@@ -26,6 +28,7 @@ export default function Home() {
 
   const handleAddButtonClick = () => {
     setShowModalAdd(true);
+    setModo('add');
   }
 
   return (
@@ -36,13 +39,21 @@ export default function Home() {
       </div>
       <div className="cardContainer">
         {dragons.map((dragon, index) => (
-          <DragonCard key={index} dragon={dragon} />
+          <DragonCard
+            key={index}
+            dragon={dragon}
+            setShowModalAdd={setShowModalAdd}
+            modo={modo}
+            setModo={setModo}
+            idDragon={idDragon}
+            setIdDragon={setIdDragon}
+          />
         ))}
 
       </div>
 
       {showModalAdd && (
-        <ModalAdd setShowModalAdd={setShowModalAdd} />
+        <ModalAdd setShowModalAdd={setShowModalAdd} modo={modo} idDragon={idDragon} />
       )};
     </div>
   );

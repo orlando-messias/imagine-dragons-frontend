@@ -9,7 +9,7 @@ import { modalValidation } from '../services/modalServices';
 import './ModalAddStyles.css';
 
 
-export default function ModalAdd({ setShowModalAdd }) {
+export default function ModalAdd({ setShowModalAdd, modo, idDragon }) {
   const [dragon, setDragon] = useState({
     name: '',
     type: '',
@@ -17,6 +17,7 @@ export default function ModalAdd({ setShowModalAdd }) {
     histories: []
   });
   const [errorName, setErrorName] = useState(true);
+  const [modified, setModified] = useState(false);
 
   useEffect(() => {
     modalValidation(dragon.name)
@@ -25,20 +26,35 @@ export default function ModalAdd({ setShowModalAdd }) {
 
   }, [dragon]);
 
+  useEffect(() => {
+    if(modo === 'edit')
+      apiDragons.get(`/${idDragon}`)
+        .then(response => setDragon(response.data))
+        .catch(e => console.log(e));
+  },[])
+
   const handleInputChange = (e) => {
     let { name, value } = e.target;
     setDragon(prevState => ({
       ...prevState,
       [name]: value
     }));
-    console.log(dragon)
+    setModified(true);
   };
 
   const handleAddNew = () => {
-    apiDragons.post('/', dragon)
+    if(modo === 'add') {
+      apiDragons.post('/', dragon)
+        .then(() =>handleCloseModal(false))
+        .catch(e => console.log(e));
+    }
+
+    if(modo === 'edit') {
+      apiDragons.put(`/${dragon.id}`, dragon)
       .then(() =>handleCloseModal(false))
       .catch(e => console.log(e));
-  }
+    }
+  };
 
   const handleCloseModal = () => {
     setShowModalAdd(false);
@@ -47,7 +63,7 @@ export default function ModalAdd({ setShowModalAdd }) {
   return (
     <div className="modalAdd">
       <div className="modalContainer">
-
+      {console.log(modo)}
         <div className="modalAddHeader">
           <h2>New Dragon</h2>
           <AiFillCloseCircle className="closeIcon" onClick={handleCloseModal} />
@@ -57,6 +73,7 @@ export default function ModalAdd({ setShowModalAdd }) {
           <input
             type="text"
             name="name"
+            value = {dragon.name}
             onChange={handleInputChange}
             className="field"
             className={`field ${errorName ? 'error' : 'noError'}`}
@@ -64,11 +81,12 @@ export default function ModalAdd({ setShowModalAdd }) {
           />
           <select
             name="type"
+            value = {dragon.type}
             onChange={handleInputChange}
             className="select"
             placeholder="Dragon Type"
           >
-            <option value="">Select</option>
+            <option value="">Select Type</option>
             <option value="Fire">Fire</option>
             <option value="Thunder">Thunder</option>
             <option value="Vampire">Vampire</option>
@@ -81,7 +99,8 @@ export default function ModalAdd({ setShowModalAdd }) {
             className="modalAddButton"
             onClick={handleAddNew}
             disabled={
-              !(modalValidation(dragon.name) && modalValidation(dragon.type))
+              !(modalValidation(dragon.name) && modalValidation(dragon.type)
+              && modified)
             }
           >
             Add New

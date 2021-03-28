@@ -79,15 +79,17 @@
     font-weight: bold;
     border: none;
     border-radius: 5px;
-    background-color: red;
+    background-color: #e1392c;
+    border: 1px solid #e1392c;
     font-size: 20px;
     cursor: pointer;
     width: 100px;
-    transition: ease-in 0.3s;
+    transition: ease-in 0.2s;
 }
 
-.modalAddButton:hover {
-  background-color: rgb(236, 106, 106);
+.modalAddButton:enabled:hover {
+  background-color: white;
+  color: #e1392c;
 }
 
 .modalFooter {
