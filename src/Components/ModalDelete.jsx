@@ -18,11 +18,12 @@ export default function ModalDelete({ setShowModalDelete, dragon }) {
     apiDragons.delete(`/${dragon.id}`)
       .then(() => setShowModalDelete(false))
       .catch(e => console.log(e));
-  }
+  };
 
   return (
     <div className="modalDelete">
       <div className="modalDeleteContainer">
+
         <div className="modalDeleteHeader">
           <h2>Delete Dragon</h2>
         </div>
@@ -30,18 +31,17 @@ export default function ModalDelete({ setShowModalDelete, dragon }) {
         <div className="content">
           <span className="contentIcon"><MdDelete /></span>
           <span>Are you sure you want to remove <b>{dragon.name}</b>?</span>
-
         </div>
 
         <div className="modalDeleteFooter">
           <button
-            className="modalDeleteButton"
+            className="modalButton"
             onClick={handleDelete}
           >
             Sure, delete it
           </button>
           <button
-            className="modalDeleteButton"
+            className="modalButton"
             onClick={handleCloseModal}
           >
             Nope

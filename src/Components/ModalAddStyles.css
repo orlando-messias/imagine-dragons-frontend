@@ -23,7 +23,7 @@
   border-radius: 5px;
 }
 
-.modalAddHeader {
+.modalHeader {
   display: flex;
   align-items: center;
   background-color: #e1392c;
@@ -34,17 +34,11 @@
   color: white;
 }
 
-.closeIcon {
+.modalHeader .closeIcon {
   display: flex;
   font-size: 36px;
   margin-right: 40px;
   cursor: pointer;
-}
-
-.modalContainer h2 {
-  font-family: 'Teko', sans-serif;
-  letter-spacing: 2px;
-  font-size: 30px;
 }
 
 .contentP {
@@ -55,7 +49,7 @@
   align-items: center;
 }
 
-.contentPIcon {
+.contentP .contentPIcon {
   font-size: 22px;
   margin: 0 10px 0 10px;
   color: #e1392c;
@@ -68,7 +62,7 @@
   justify-content: space-between;
   flex-direction: column;
   height: 110px;
-  margin: 25px;
+  margin: 25px 25px 45px 25px;
   padding: 15px 20px;
   border-radius: 5px;
 }
@@ -86,7 +80,16 @@
   font-weight: bold;
 }
 
-.modalAddButton {
+.modalFooter {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 40px;
+}
+
+
+/* -- general css button rules -- */
+
+ .modalButton {
   font-family: 'Teko', sans-serif;
   color: rgb(255, 255, 255);
   padding: 5px 15px;
@@ -97,19 +100,11 @@
   border: 1px solid #e1392c;
   font-size: 20px;
   cursor: pointer;
-  width: 100px;
   transition: ease-in 0.2s;
-  margin-top: 20px;
   letter-spacing: 1px;
 }
 
-.modalAddButton:enabled:hover {
+.modalButton:enabled:hover {
   background-color: white;
   color: #e1392c;
-}
-
-.modalFooter {
-  display: flex;
-  align-items: flex-end;
-  margin-top: 40px;
 }

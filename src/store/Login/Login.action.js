@@ -49,7 +49,7 @@ export const errorToFalse = () => {
   }
 };
 
-export const logout = () => {
+export const userLogout = () => {
   return {
     type: LOGOUT,
     user: {},

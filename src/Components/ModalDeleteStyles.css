@@ -47,31 +47,25 @@
   margin: 0 10px 0 10px;
 }
 
-.modalDeleteButton {
-  font-family: 'Teko', sans-serif;
-  color: rgb(255, 255, 255);
-  padding: 5px 15px;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  background-color: #e1392c;
-  border: 1px solid #e1392c;
-  font-size: 20px;
-  cursor: pointer;
-  transition: ease-in 0.2s;
-  outline: none;
-  letter-spacing: 1px;
-}
-
-.modalDeleteButton:hover {
-  background-color: white;
-  color: #e1392c;
-}
-
 .modalDeleteFooter {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin-top: 20px;
   width: 50%;
+}
+
+
+/* -- responsive -- */
+
+@media(max-width: 410px) {
+  
+  .modalDeleteFooter {
+    margin-top: -20px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    height: 100px;
+  }
+
 }

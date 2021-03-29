@@ -1,5 +1,6 @@
 // react
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router';
 // components
 import UserTopBar from '../Components/UserTopBar';
 import DragonCard from '../Components/DragonCard';
@@ -10,13 +11,13 @@ import { BsPlusSquareFill } from 'react-icons/bs';
 // services
 import apiDragons from '../services/apiDragons';
 import { isLogin } from '../services/loginServices';
+import { sortDragonsByName } from '../services/cardsServices';
 // styles
 import './HomeStyles.css';
-import { useHistory } from 'react-router';
-import { sortDragonsByName } from '../services/cardsServices';
 
 
 export default function Home() {
+  // local states
   const [dragons, setDragons] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
   const [showModalAdd, setShowModalAdd] = useState(false);
@@ -69,12 +70,10 @@ export default function Home() {
             key={index}
             dragon={dragon}
             setShowModalAdd={setShowModalAdd}
-            modo={modo}
-            setModo={setModo}
-            idDragon={idDragon}
-            setIdDragon={setIdDragon}
             setShowModalDelete={setShowModalDelete}
             setDragon={setDragon}
+            setModo={setModo}
+            setIdDragon={setIdDragon}
           />
         ))}
 
@@ -85,11 +84,19 @@ export default function Home() {
       }
 
       {showModalAdd && (
-        <ModalAdd setShowModalAdd={setShowModalAdd} modo={modo} idDragon={idDragon} />
+        <ModalAdd
+          setShowModalAdd={setShowModalAdd}
+          modo={modo}
+          idDragon={idDragon}
+        />
       )}
+
       {showModalDelete && (
-        <ModalDelete setShowModalDelete={setShowModalDelete} dragon={dragon} />
+        <ModalDelete
+          setShowModalDelete={setShowModalDelete}
+          dragon={dragon} />
       )}
+
     </div>
   );
 };

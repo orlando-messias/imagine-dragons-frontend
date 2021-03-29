@@ -1,5 +1,9 @@
 // react
 import React, { useState } from 'react';
+import { useHistory } from 'react-router';
+// redux
+import { useDispatch } from 'react-redux';
+import { userLogout } from '../store/Login/Login.action';
 // react icons
 import { FaUserAlt } from 'react-icons/fa';
 import { IoLogOutSharp } from 'react-icons/io5';
@@ -7,39 +11,41 @@ import { IoLogOutSharp } from 'react-icons/io5';
 import './UserTopBarStyles.css';
 
 export default function UserTopBar() {
+  // local state
   const [showMenu, setShowMenu] = useState(false);
 
-  const ROOT_URL = 'http://localhost:3000/';
+  const dispatch = useDispatch();
+  const history = useHistory();
 
-  const user = JSON.parse(localStorage.getItem('user')) || null;
+  const user = JSON.parse(localStorage.getItem('loggedUser')) || null;
 
-  const handleMenuLogout = () => {
+  const handleMenuLogoutClick = () => {
     setShowMenu(!showMenu);
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('user');
-    window.location.href = ROOT_URL;
+    dispatch(userLogout());
+    localStorage.removeItem('loggedUser');
+    history.push('/');
   };
 
   return (
     <div className="userBarContainer">
+
       <div>
         <span>Welcome, {user
           && user.username[0].toUpperCase() + user.username.slice(1)}
         </span>
-        <span className="userIcon" onClick={handleMenuLogout} ><FaUserAlt />
+        <span className="userIcon" onClick={handleMenuLogoutClick} ><FaUserAlt />
           <p
-            onMouseOut={handleMenuLogout}
+            onMouseOut={handleMenuLogoutClick}
             className={`menuLogout ${showMenu ? 'showMenu' : ''}`}
             onClick={handleLogout}
           >
             <IoLogOutSharp /> <span>Logout</span>
           </p>
-
         </span>
       </div>
-
 
     </div>
   );

@@ -7,7 +7,11 @@ import { loginUser, errorToFalse } from '../store/Login/Login.action';
 // react-icons
 import { BsFillShieldLockFill } from 'react-icons/bs';
 // services
-import { passwordValidation, emailValidation, isLogin } from '../services/loginServices';
+import {
+  passwordValidation,
+  emailValidation,
+  isLogin
+} from '../services/loginServices';
 // styles
 import './LoginStyles.css';
 
@@ -49,7 +53,7 @@ export default function Login() {
 
   useEffect(() => {
     if (success) {
-      localStorage.setItem('user', JSON.stringify(user));
+      localStorage.setItem('loggedUser', JSON.stringify(user));
       history.push('/home');
     }
     if (error) {
@@ -90,7 +94,7 @@ export default function Login() {
         <p className="title">LOGIN</p>
 
         <div className="form">
-          <div className="fields">
+          <div className="fieldsBox">
             <input
               name="email"
               type="text"

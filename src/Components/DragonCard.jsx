@@ -11,8 +11,14 @@ import './DragonCardStyles.css';
 import avatar from '../assets/dragon.jpg';
 
 
-export default function DragonCard({ dragon, setShowModalAdd, setShowModalDelete, setDragon, setModo, setIdDragon }) {
-  // format date from createdAt
+export default function DragonCard({ dragon,
+  setShowModalAdd,
+  setShowModalDelete,
+  setDragon,
+  setModo,
+  setIdDragon }) {
+
+  // format date from dragon createdAt
   const createdAt = dragon.createdAt.split('-');
   const day = createdAt[2].substr(0, 2);
   const month = createdAt[1];
@@ -21,7 +27,7 @@ export default function DragonCard({ dragon, setShowModalAdd, setShowModalDelete
 
   const history = useHistory();
 
-  const handleClick = (id) => {
+  const handleClickDetails = (id) => {
     history.push(`/detail/${id}`);
   };
 
@@ -45,13 +51,15 @@ export default function DragonCard({ dragon, setShowModalAdd, setShowModalDelete
         <h3>{dragon.name}</h3>
       </div>
 
-      <p className="cardPType">Type | Strong Point: <span className="cardSpanType">{dragon.type}</span></p>
+      <p className="cardPType">
+        Type | Strong Point: <span className="cardSpanType">{dragon.type}</span>
+      </p>
 
       <div className="cardDescription">
         <p>Description</p>
         <p
           className="moreDetails"
-          onClick={() => handleClick(dragon.id)}
+          onClick={() => handleClickDetails(dragon.id)}
         >
           ... more Details
         </p>
@@ -59,8 +67,8 @@ export default function DragonCard({ dragon, setShowModalAdd, setShowModalDelete
 
       <div className="cardFooter">
         <p className="createdAt"><AiTwotoneCalendar /> {newFormatDate}</p>
-        <div className="iconsFooter">
-          <FaPencilAlt className="iconFooter" onClick={() => handleEditButtonClick(dragon.id)}/>
+        <div className="iconsFooterBox">
+          <FaPencilAlt className="iconFooter" onClick={() => handleEditButtonClick(dragon.id)} />
           <RiDeleteBin6Line className="iconFooter" onClick={() => handleDeleteButtonClick(dragon)} />
         </div>
       </div>

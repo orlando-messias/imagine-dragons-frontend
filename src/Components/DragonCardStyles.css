@@ -26,11 +26,8 @@
   letter-spacing: 2px;
 }
 
-.cardTitle img {
+.cardTitle .cardAvatar {
   margin-left: 10px;
-}
-
-.cardAvatar {
   width: 60px;
   border-radius: 50%;
   border: 1px solid black;
@@ -98,16 +95,16 @@
   margin-left: 10px;
 }
 
-.cardFooter .iconsFooter {
+.cardFooter .iconsFooterBox {
   margin-right: 10px;
 }
 
-.cardFooter .iconFooter {
+.cardFooter .iconsFooterBox .iconFooter {
   margin-left: 10px;
   cursor: pointer;
   font-size: 18px;
 }
 
-.cardFooter .iconFooter:hover {
-  color: white
+.cardFooter .iconsFooterBox .iconFooter:hover {
+  color: white;
 }

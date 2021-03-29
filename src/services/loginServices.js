@@ -11,7 +11,7 @@ const passwordValidation = (value) => {
 };
 
 const isLogin = () => {
-  return localStorage.getItem('user') ? true : false
+  return localStorage.getItem('loggedUser') ? true : false
 };
 
 module.exports = {

@@ -1,13 +1,18 @@
+// react
 import React, { useEffect, useState } from 'react';
-import apiDragons from '../services/apiDragons';
-
-import './DetailStyles.css';
-import DragonDetail from '../Components/DragonDetail';
-import { isLogin } from '../services/loginServices';
 import { useHistory } from 'react-router';
+// components
 import UserTopBar from '../Components/UserTopBar';
+import DragonDetail from '../Components/DragonDetail';
+// services
+import { isLogin } from '../services/loginServices';
+import apiDragons from '../services/apiDragons';
+// styles
+import './DetailStyles.css';
+
 
 export default function Detail({ match }) {
+  // local state
   const [dragonDetails, setDragonDetails] = useState({});
 
   // get the dragon id passed with url
@@ -24,13 +29,10 @@ export default function Detail({ match }) {
         .catch(e => console.log(e));
   }, [id, history]);
 
-  if (!dragonDetails) return <div>LOADING...</div>
-
   return (
     <div className="detailContainer">
       <UserTopBar />
       <DragonDetail dragonDetails={dragonDetails} />
     </div>
-
-  )
-}
+  );
+};

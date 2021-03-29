@@ -11,6 +11,7 @@ import './ModalAddStyles.css';
 
 
 export default function ModalAdd({ setShowModalAdd, modo, idDragon }) {
+  // local states
   const [dragon, setDragon] = useState({
     name: '',
     type: '',
@@ -20,6 +21,7 @@ export default function ModalAdd({ setShowModalAdd, modo, idDragon }) {
   const [errorName, setErrorName] = useState(true);
   const [modified, setModified] = useState(false);
 
+  // checks if typed dragon name is valid
   useEffect(() => {
     modalValidation(dragon.name)
       ? setErrorName(false)
@@ -28,11 +30,11 @@ export default function ModalAdd({ setShowModalAdd, modo, idDragon }) {
   }, [dragon]);
 
   useEffect(() => {
-    if(modo === 'edit')
+    if (modo === 'edit')
       apiDragons.get(`/${idDragon}`)
         .then(response => setDragon(response.data))
         .catch(e => console.log(e));
-  },[])
+  }, [])
 
   const handleInputChange = (e) => {
     let { name, value } = e.target;
@@ -44,16 +46,16 @@ export default function ModalAdd({ setShowModalAdd, modo, idDragon }) {
   };
 
   const handleAddNew = () => {
-    if(modo === 'add') {
+    if (modo === 'add') {
       apiDragons.post('/', dragon)
-        .then(() =>setShowModalAdd(false))
+        .then(() => setShowModalAdd(false))
         .catch(e => console.log(e));
     }
 
-    if(modo === 'edit') {
+    if (modo === 'edit') {
       apiDragons.put(`/${dragon.id}`, dragon)
-      .then(() =>setShowModalAdd(false))
-      .catch(e => console.log(e));
+        .then(() => setShowModalAdd(false))
+        .catch(e => console.log(e));
     }
   };
 
@@ -64,8 +66,8 @@ export default function ModalAdd({ setShowModalAdd, modo, idDragon }) {
   return (
     <div className="modalAdd">
       <div className="modalContainer">
-      {console.log(modo)}
-        <div className="modalAddHeader">
+
+        <div className="modalHeader">
           <h2>{modo === 'add' ? 'New Dragon' : 'Edit Dragon'}</h2>
           <AiFillCloseCircle className="closeIcon" onClick={handleCloseModal} />
         </div>
@@ -80,7 +82,7 @@ export default function ModalAdd({ setShowModalAdd, modo, idDragon }) {
             type="text"
             name="name"
             autoFocus
-            value = {dragon.name}
+            value={dragon.name}
             onChange={handleInputChange}
             className="field"
             className={`field ${errorName ? 'error' : 'noError'}`}
@@ -88,7 +90,7 @@ export default function ModalAdd({ setShowModalAdd, modo, idDragon }) {
           />
           <select
             name="type"
-            value = {dragon.type}
+            value={dragon.type}
             onChange={handleInputChange}
             className="select"
             placeholder="Dragon Type"
@@ -103,11 +105,11 @@ export default function ModalAdd({ setShowModalAdd, modo, idDragon }) {
 
         <div className="modalFooter">
           <button
-            className="modalAddButton"
+            className="modalButton"
             onClick={handleAddNew}
             disabled={
               !(modalValidation(dragon.name) && modalValidation(dragon.type)
-              && modified)
+                && modified)
             }
           >
             {modo === 'add' ? 'Add New' : 'Change'}

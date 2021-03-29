@@ -12,7 +12,7 @@ import dragonImg from '../assets/dragon.jpg';
 
 export default function DragonDetail({ dragonDetails }) {
 
-  const handleBackArrow = () => {
+  const handleBackArrowClick = () => {
     window.history.back();
   }
 
@@ -35,7 +35,7 @@ export default function DragonDetail({ dragonDetails }) {
 
       </div>
 
-      <div className="back" onClick={handleBackArrow}>
+      <div className="backBox" onClick={handleBackArrowClick}>
         <IoChevronBackCircleSharp className="backArrow" />
         <span>back</span>
       </div>
@@ -52,6 +52,7 @@ export default function DragonDetail({ dragonDetails }) {
         <div className="detailFooterCalendar">
           <AiTwotoneCalendar className="calendar" />
         </div>
+        
         <span className="detailCreatedAt">{dragonDetails.createdAt &&
           `${dragonDetails.createdAt.split('-')[2].substr(0, 2)}/
             ${dragonDetails.createdAt.split('-')[1]}/

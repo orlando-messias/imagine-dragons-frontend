@@ -8,18 +8,6 @@
   align-items: center;
 }
 
-.cardContainer {
-  margin: 90px auto;
-  display: flex;
-  width: 90%;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  align-items: center;
-  background-color: white;
-  border-radius: 14px;
-  border: 1px solid gainsboro;
-}
-
 .homeHeader {
   position: absolute;
   top: 0;
@@ -35,11 +23,23 @@
   margin-bottom: 0;
 }
 
-.iconPlus {
+.homeHeader .iconPlus {
   font-size: 34px;
   cursor: pointer;
 }
 
-.iconPlus:hover {
+.homeHeader .iconPlus:hover {
   color: #e1392c
+}
+
+.cardContainer {
+  margin: 90px auto;
+  display: flex;
+  width: 90%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: white;
+  border-radius: 14px;
+  border: 1px solid gainsboro;
 }

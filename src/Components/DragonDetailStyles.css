@@ -41,13 +41,13 @@
   align-items: center;
 }
 
-.mainHeader .header .headerIcon {
+.mainHeader .header .headerTitles .headerIcon {
   font-size: 40px;
   margin-right: 10px;
   color: white;
 }
 
-.mainHeader .header .headerTitle {
+.mainHeader .header .headerTitles .headerTitle {
   margin: 0;
   font-family: 'Teko', sans-serif;
   font-size: 40px;
@@ -73,7 +73,7 @@
   letter-spacing: 2px;
 }
 
-.back {
+.backBox {
   align-self: flex-start;
   display: flex;
   flex-direction: row;
@@ -83,11 +83,11 @@
   cursor: pointer;
 }
 
-.back:hover {
+.backBox:hover {
   opacity: 0.7;
 }
 
-.backArrow {
+.backBox .backArrow {
   font-size: 34px;
   color: #e1392c;
   margin-right: 5px;
@@ -96,7 +96,6 @@
 .detailDescription {
   margin: 30px 0;
   width: 350px;
-  /* color: gray; */
   height: 200px;
   overflow-y: scroll;
   border: 1px solid gainsboro;
@@ -114,7 +113,7 @@
   height: 50px;
 }
 
-.detailFooterCalendar {
+.detailFooter .detailFooterCalendar {
   position:relative;
   top: -20px;
   left: -100px;
@@ -125,11 +124,11 @@
   padding: 10px;
 }
 
-.detailFooterCalendar .calendar {
+.detailFooter .detailFooterCalendar .calendar {
   font-size: 45px;
 }
 
-.detailCreatedAt {
+.detailFooter .detailCreatedAt {
   font-weight: bold;
   font-size: 20px;
   font-family: 'Teko', sans-serif;
@@ -137,7 +136,10 @@
 }
 
 
+/* -- responsive -- */
+
 @media(max-width: 800px) {
+
   .dragonDetailContainer {
     width: 100%;
   }
@@ -154,7 +156,7 @@
     height: 100px;
   }
 
-  .mainHeader .header .headerTitle {
+  .mainHeader .header .headerTitles .headerTitle {
     font-family: 'Teko', sans-serif;
     font-size: 30px;
     letter-spacing: 3px;
@@ -175,7 +177,8 @@
 }
 
 @media(max-width: 415px) {
-  .mainHeader .header .headerIcon{
+
+  .mainHeader .header .headerTitles .headerIcon{
     display: none;
   }
 
@@ -183,22 +186,23 @@
     width: 90%;
   }
 
-  .detailFooterCalendar {
+  .detailFooter .detailFooterCalendar {
     left: -20px;
   }
 
-  .detailFooterCalendar .calendar {
+  .detailFooter .detailFooterCalendar .calendar {
     font-size: 40px;
   }
   
 }
 
 @media(max-width: 360px) {
+
   .mainHeader .dragonImg {
     width: 60px;
   }
 
-  .mainHeader .header .headerTitle {
+  .mainHeader .header .headerTitles .headerTitle {
     font-size: 28px;
   }
 
