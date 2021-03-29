@@ -1,5 +1,6 @@
 const passwordValidation = (value) => {
-  return (value.length >= 3) ? true : false;
+  const spaces = /^\S*$/;
+  return (value.length >= 3 && spaces.test(value)) ? true : false;
 };
 
  // Checks if email is a valid email

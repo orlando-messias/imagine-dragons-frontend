@@ -3,7 +3,7 @@ import React from 'react';
 // react icons
 import { AiTwotoneCalendar } from 'react-icons/ai';
 import { IoChevronBackCircleSharp } from 'react-icons/io5';
-import { BiDetail } from 'react-icons/bi';
+import { GiSeaDragon } from 'react-icons/gi';
 // styles
 import './DragonDetailStyles.css';
 // image
@@ -24,7 +24,7 @@ export default function DragonDetail({ dragonDetails }) {
 
         <div className="header">
           <div className="headerTitles">
-            <span className="headerIcon"><BiDetail /></span>
+            <span className="headerIcon"><GiSeaDragon /></span>
             <h3 className="headerTitle"> Dragon Details</h3>
           </div>
           <div className="headerInfo">

@@ -69,7 +69,6 @@ export default function Login() {
   const login = () => {
     const { email, password } = userLogin;
     dispatch(errorToFalse());
-    console.log('HERE ', email, password);
     dispatch(loginUser(email, password))
   };
 
@@ -107,7 +106,7 @@ export default function Login() {
               value={userLogin.password}
               onChange={handleInputChange}
               className={`field ${errorPassword ? 'error' : 'noError'}`}
-              placeholder="password *"
+              placeholder="password no spaces allowed"
             />
           </div>
 

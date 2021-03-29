@@ -4,9 +4,9 @@ import React, { useState } from 'react';
 import { FaUserAlt } from 'react-icons/fa';
 import { IoLogOutSharp } from 'react-icons/io5';
 //styles
-import './UserBarStyles.css';
+import './UserTopBarStyles.css';
 
-export default function UserBar() {
+export default function UserTopBar() {
   const [showMenu, setShowMenu] = useState(false);
 
   const ROOT_URL = 'http://localhost:3000/';
@@ -28,16 +28,18 @@ export default function UserBar() {
         <span>Welcome, {user
           && user.username[0].toUpperCase() + user.username.slice(1)}
         </span>
-        <span className="userIcon" onClick={handleMenuLogout} ><FaUserAlt /></span>
+        <span className="userIcon" onClick={handleMenuLogout} ><FaUserAlt />
+          <p
+            onMouseOut={handleMenuLogout}
+            className={`menuLogout ${showMenu ? 'showMenu' : ''}`}
+            onClick={handleLogout}
+          >
+            <IoLogOutSharp /> <span>Logout</span>
+          </p>
+
+        </span>
       </div>
 
-      <p
-        onMouseOut={handleMenuLogout}
-        className={`menuLogout ${showMenu ? 'showMenu' : ''}`}
-        onClick={handleLogout}
-      >
-        <IoLogOutSharp /> <span>Logout</span>
-      </p>
 
     </div>
   );

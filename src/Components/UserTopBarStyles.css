@@ -1,11 +1,10 @@
 .userBarContainer {
-  align-self: flex-end;
+  position: absolute;
+  top: 10px;
   width: 80%;
   height: 20px;
   text-align: right;
   font-weight: bold;
-  display: flex;
-  flex-direction: column;
 }
 
 .userBarContainer .userIcon {
@@ -22,15 +21,15 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  position: relative;
-  top: -15px;
-  right: -20px;
-  padding: 10px;
-  background-color:white;
+  position: absolute;
+  top: 2px;
+  right: -15px;
+  padding: 12px 15px 16px 10px;
+  background-color:rgb(235, 235, 235);
   width: 100px;
-  align-self: flex-end;
   cursor: pointer;
   border-radius: 5px;
+  z-index: 9999;
 }
 
 .userBarContainer .showMenu span {

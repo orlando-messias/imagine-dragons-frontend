@@ -12,7 +12,7 @@
 
 .modalDeleteContainer {
   width: 500px;
-  height: 220px;
+  height: 210px;
   padding: 10px 10px;
   display: flex;
   align-items: center;
@@ -42,8 +42,8 @@
 }
 
 .content .contentIcon {
-  font-size: 30px;
-  color: #fdba4e;
+  font-size: 26px;
+  color: #e1392c;
   margin: 0 10px 0 10px;
 }
 

@@ -1,5 +1,5 @@
 .homeContainer {
-  max-width: 1000px;
+  max-width: 1300px;
   min-height: 100vh;
   margin: 0 auto;
   padding: 10px 0 0 0;
@@ -9,7 +9,7 @@
 }
 
 .cardContainer {
-  margin: 70px auto;
+  margin: 90px auto;
   display: flex;
   width: 90%;
   justify-content: space-around;
@@ -17,6 +17,7 @@
   align-items: center;
   background-color: white;
   border-radius: 14px;
+  border: 1px solid gainsboro;
 }
 
 .homeHeader {

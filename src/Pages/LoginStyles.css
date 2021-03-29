@@ -7,8 +7,8 @@
 }
 
 .loginContainer {
-  width: 320px;
-  height: 420px;
+  width: 330px;
+  height: 430px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,7 +40,7 @@
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
-  height: 250px;
+  height: 280px;
 }
 
 .fields {
@@ -48,7 +48,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 90px;
+  height: 96px;
   width: 90%;
 }
 

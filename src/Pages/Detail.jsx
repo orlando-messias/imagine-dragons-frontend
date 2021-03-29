@@ -5,7 +5,7 @@ import './DetailStyles.css';
 import DragonDetail from '../Components/DragonDetail';
 import { isLogin } from '../services/loginServices';
 import { useHistory } from 'react-router';
-import UserBar from '../Components/UserBar';
+import UserTopBar from '../Components/UserTopBar';
 
 export default function Detail({ match }) {
   const [dragonDetails, setDragonDetails] = useState({});
@@ -28,7 +28,7 @@ export default function Detail({ match }) {
 
   return (
     <div className="detailContainer">
-      <UserBar />
+      <UserTopBar />
       <DragonDetail dragonDetails={dragonDetails} />
     </div>
 

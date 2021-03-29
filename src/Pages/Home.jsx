@@ -1,6 +1,7 @@
 // react
 import React, { useEffect, useState } from 'react';
 // components
+import UserTopBar from '../Components/UserTopBar';
 import DragonCard from '../Components/DragonCard';
 import ModalAdd from '../Components/ModalAdd';
 import ModalDelete from '../Components/ModalDelete';
@@ -12,12 +13,12 @@ import { isLogin } from '../services/loginServices';
 // styles
 import './HomeStyles.css';
 import { useHistory } from 'react-router';
-import UserBar from '../Components/UserBar';
 import { sortDragonsByName } from '../services/cardsServices';
 
 
 export default function Home() {
   const [dragons, setDragons] = useState([]);
+  const [isFetching, setIsFetching] = useState(false);
   const [showModalAdd, setShowModalAdd] = useState(false);
   const [showModalDelete, setShowModalDelete] = useState(false);
   const [modo, setModo] = useState('');
@@ -28,18 +29,23 @@ export default function Home() {
 
   // checks if there's a user logged in
   useEffect(() => {
-    (!isLogin())
-      ? history.push('/')
-      : apiDragons.get('/')
+    if (!isLogin()) {
+      history.push('/');
+    } else {
+      setIsFetching(true);
+      apiDragons.get('/')
         .then(response => {
           const sortedDragons = sortDragonsByName(response.data);
           setDragons(sortedDragons);
+          setIsFetching(false);
         })
         .catch(e => console.log(e));
+    }
+
   }, [showModalAdd, showModalDelete]);
 
   // preloader while is fetching
-  if (dragons.length === 0) {
+  if (dragons.length === 0 && isFetching) {
     return (
       <div className="loading">LOADING...</div>
     );
@@ -52,7 +58,7 @@ export default function Home() {
 
   return (
     <div className="homeContainer">
-      <UserBar />
+      <UserTopBar />
       <div className="homeHeader">
         <h2>DRAGONS CARDS</h2>
         <BsPlusSquareFill className="iconPlus" onClick={handleAddButtonClick} />
@@ -73,6 +79,10 @@ export default function Home() {
         ))}
 
       </div>
+
+      {dragons.length === 0 &&
+        <p>No Dragons in Database</p>
+      }
 
       {showModalAdd && (
         <ModalAdd setShowModalAdd={setShowModalAdd} modo={modo} idDragon={idDragon} />

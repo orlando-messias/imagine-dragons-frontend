@@ -94,9 +94,9 @@
 }
 
 .detailDescription {
-  margin: 60px 0;
+  margin: 30px 0;
   width: 350px;
-  color: gray;
+  /* color: gray; */
   height: 200px;
   overflow-y: scroll;
   border: 1px solid gainsboro;

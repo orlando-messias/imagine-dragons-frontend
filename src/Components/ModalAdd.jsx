@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 // react icons
 import { AiFillCloseCircle } from 'react-icons/ai';
-import { BiMessageSquareAdd } from 'react-icons/bi';
+import { FaFileAlt } from 'react-icons/fa';
 // services
 import apiDragons from '../services/apiDragons';
 import { modalValidation } from '../services/modalServices';
@@ -71,7 +71,7 @@ export default function ModalAdd({ setShowModalAdd, modo, idDragon }) {
         </div>
 
         <div className="contentP">
-          <span className="contentPIcon"><BiMessageSquareAdd /> </span>
+          <span className="contentPIcon"><FaFileAlt /> </span>
           <span>{modo === 'add' ? 'Register a new Dragon' : `Editing ${dragon.name}`}</span>
         </div>
 
