@@ -76,10 +76,10 @@ export default function Home() {
 
       {showModalAdd && (
         <ModalAdd setShowModalAdd={setShowModalAdd} modo={modo} idDragon={idDragon} />
-      )};
+      )}
       {showModalDelete && (
         <ModalDelete setShowModalDelete={setShowModalDelete} dragon={dragon} />
-      )};
+      )}
     </div>
   );
 };
