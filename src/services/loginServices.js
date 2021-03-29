@@ -9,7 +9,12 @@ const passwordValidation = (value) => {
   return true;
 };
 
+const isLogin = () => {
+  return localStorage.getItem('user') ? true : false
+};
+
 module.exports = {
   passwordValidation,
-  emailValidation
+  emailValidation,
+  isLogin
 };

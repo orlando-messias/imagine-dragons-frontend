@@ -72,7 +72,7 @@ export default function ModalAdd({ setShowModalAdd, modo, idDragon }) {
 
         <div className="contentP">
           <span className="contentPIcon"><BiMessageSquareAdd /> </span>
-          <span>Register or Edit a new Dragon</span>
+          <span>{modo === 'add' ? 'Register a new Dragon' : `Editing ${dragon.name}`}</span>
         </div>
 
         <div className="modalFields">

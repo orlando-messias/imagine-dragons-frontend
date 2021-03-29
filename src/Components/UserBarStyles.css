@@ -1,0 +1,38 @@
+.userBarContainer {
+  align-self: flex-end;
+  width: 80%;
+  height: 20px;
+  text-align: right;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+}
+
+.userBarContainer .userIcon {
+  margin-left: 10px;
+  cursor: pointer;
+  color: blue;
+}
+
+.userBarContainer .menuLogout {
+  display: none;
+}
+
+.userBarContainer .showMenu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  top: -15px;
+  right: -20px;
+  padding: 10px;
+  background-color: rgb(240, 240, 240);
+  width: 100px;
+  align-self: flex-end;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.userBarContainer .showMenu span {
+  margin-left: 5px;
+}

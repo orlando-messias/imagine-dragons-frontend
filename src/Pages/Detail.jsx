@@ -3,6 +3,9 @@ import apiDragons from '../services/apiDragons';
 
 import './DetailStyles.css';
 import DragonDetail from '../Components/DragonDetail';
+import { isLogin } from '../services/loginServices';
+import { useHistory } from 'react-router';
+import UserBar from '../Components/UserBar';
 
 export default function Detail({ match }) {
   const [dragonDetails, setDragonDetails] = useState({});
@@ -10,17 +13,24 @@ export default function Detail({ match }) {
   // get the dragon id passed with url
   const id = match.params.id;
 
-  useEffect(() => {
-    apiDragons.get(`/${id}`)
-      .then(response => setDragonDetails(response.data))
-      .catch(e => console.log(e));
-  }, [id]);
+  const history = useHistory();
 
-  if(!dragonDetails) return <div>LOADING...</div>
+  // checks if there's a user logged in
+  useEffect(() => {
+    (!isLogin())
+      ? history.push('/')
+      : apiDragons.get(`/${id}`)
+        .then(response => setDragonDetails(response.data))
+        .catch(e => console.log(e));
+  }, [id, history]);
+
+  if (!dragonDetails) return <div>LOADING...</div>
 
   return (
     <div className="detailContainer">
-        <DragonDetail dragonDetails={dragonDetails} />
+      <UserBar />
+      <DragonDetail dragonDetails={dragonDetails} />
     </div>
+
   )
 }

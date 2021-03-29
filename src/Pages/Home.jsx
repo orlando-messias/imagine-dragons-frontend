@@ -8,8 +8,12 @@ import ModalDelete from '../Components/ModalDelete';
 import { BsPlusSquareFill } from 'react-icons/bs';
 // services
 import apiDragons from '../services/apiDragons';
+import { isLogin } from '../services/loginServices';
 // styles
 import './HomeStyles.css';
+import { useHistory } from 'react-router';
+import UserBar from '../Components/UserBar';
+import { sortDragonsByName } from '../services/cardsServices';
 
 
 export default function Home() {
@@ -20,10 +24,18 @@ export default function Home() {
   const [idDragon, setIdDragon] = useState('');
   const [dragon, setDragon] = useState({});
 
+  const history = useHistory();
+
+  // checks if there's a user logged in
   useEffect(() => {
-    apiDragons.get('/')
-      .then(response => setDragons(response.data))
-      .catch(e => console.log(e));
+    (!isLogin())
+      ? history.push('/')
+      : apiDragons.get('/')
+        .then(response => {
+          const sortedDragons = sortDragonsByName(response.data);
+          setDragons(sortedDragons);
+        })
+        .catch(e => console.log(e));
   }, [showModalAdd, showModalDelete]);
 
   // preloader while is fetching
@@ -40,6 +52,7 @@ export default function Home() {
 
   return (
     <div className="homeContainer">
+      <UserBar />
       <div className="homeHeader">
         <h2>DRAGONS CARDS</h2>
         <BsPlusSquareFill className="iconPlus" onClick={handleAddButtonClick} />

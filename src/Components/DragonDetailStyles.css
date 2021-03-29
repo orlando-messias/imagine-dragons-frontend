@@ -1,6 +1,7 @@
 .dragonDetailContainer {
   display: flex;
-  width: 80%;
+  margin-top: 15px;
+  width: 90%;
   justify-content: flex-start;
   flex-direction: column;
   flex-wrap: wrap;

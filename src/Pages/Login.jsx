@@ -7,7 +7,7 @@ import { loginUser, errorToFalse } from '../store/Login/Login.action';
 // react-icons
 import { BsFillShieldLockFill } from 'react-icons/bs';
 // services
-import { passwordValidation, emailValidation } from '../services/loginServices';
+import { passwordValidation, emailValidation, isLogin } from '../services/loginServices';
 // styles
 import './LoginStyles.css';
 
@@ -31,6 +31,11 @@ export default function Login() {
   const dispatch = useDispatch();
 
   const history = useHistory();
+
+  // checks if there's a user logged in
+  useEffect(() => {
+    if (isLogin()) history.push('/home');
+  }, [history]);
 
   useEffect(() => {
     emailValidation(userLogin.email)
