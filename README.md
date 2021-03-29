@@ -13,8 +13,10 @@ A partir do login de um usuário admin - *já cadastrado em um banco de dados Mo
 
 <p align="center"><img src="/src/assets/imagesReadme/modalDelete.png"></p>
 
+#
+
 ### :bulb: Antes de Iniciar
-Acesse e rode o backend para gerenciamento do ***Login*** da aplicação [aqui](https://github.com/orlando-messias/imagine-dragons-backend)
+Acesse e rode o backend para gerenciamento do ***Login*** da aplicação: [dragons-login-backend](https://github.com/orlando-messias/imagine-dragons-backend)
 
 ### :gear: Instalações para o Frontend
 ```
