@@ -41,7 +41,11 @@ export default function DragonDetail({ dragonDetails }) {
       </div>
 
       <div className="detailDescription">
-        <p>Description</p>
+        <p><b>- Description -</b></p>
+        <p>
+          All the information and details about <b>{dragonDetails.name
+            && dragonDetails.name.toUpperCase()}</b>
+        </p>
       </div>
 
       <div className="detailFooter">

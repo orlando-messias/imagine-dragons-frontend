@@ -1,12 +1,16 @@
+// react
 import React, { useEffect, useState } from 'react';
+// components
 import DragonCard from '../Components/DragonCard';
 import ModalAdd from '../Components/ModalAdd';
 import ModalDelete from '../Components/ModalDelete';
-import apiDragons from '../services/apiDragons';
-
+// react icons
 import { BsPlusSquareFill } from 'react-icons/bs';
+// services
+import apiDragons from '../services/apiDragons';
+// styles
+import './HomeStyles.css';
 
-import './HomeStyles.css'
 
 export default function Home() {
   const [dragons, setDragons] = useState([]);
@@ -32,12 +36,12 @@ export default function Home() {
   const handleAddButtonClick = () => {
     setShowModalAdd(true);
     setModo('add');
-  }
+  };
 
   return (
     <div className="homeContainer">
       <div className="homeHeader">
-        <h2>DRAGONS CARD</h2>
+        <h2>DRAGONS CARDS</h2>
         <BsPlusSquareFill className="iconPlus" onClick={handleAddButtonClick} />
       </div>
       <div className="cardContainer">

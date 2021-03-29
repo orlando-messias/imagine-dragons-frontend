@@ -1,5 +1,6 @@
 // react
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router';
 // redux
 import { useSelector, useDispatch } from 'react-redux';
 import { loginUser, errorToFalse } from '../store/Login/Login.action';
@@ -9,7 +10,6 @@ import { BsFillShieldLockFill } from 'react-icons/bs';
 import { passwordValidation, emailValidation } from '../services/loginServices';
 // styles
 import './LoginStyles.css';
-import { useHistory } from 'react-router';
 
 
 export default function Login() {
@@ -78,9 +78,11 @@ export default function Login() {
   return (
     <div className="pageContainer">
       <div className="loginContainer">
+
         <div className="icon">
           <BsFillShieldLockFill />
         </div>
+
         <p className="title">LOGIN</p>
 
         <div className="form">
@@ -105,7 +107,6 @@ export default function Login() {
           </div>
 
           {error && <span className="errorSpan">{errorMessage}</span>}
-
 
           <button
             className="formButton"

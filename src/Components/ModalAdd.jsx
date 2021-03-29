@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 // react icons
 import { AiFillCloseCircle } from 'react-icons/ai';
+import { BiMessageSquareAdd } from 'react-icons/bi';
 // services
 import apiDragons from '../services/apiDragons';
 import { modalValidation } from '../services/modalServices';
@@ -65,14 +66,20 @@ export default function ModalAdd({ setShowModalAdd, modo, idDragon }) {
       <div className="modalContainer">
       {console.log(modo)}
         <div className="modalAddHeader">
-          <h2>New Dragon</h2>
+          <h2>{modo === 'add' ? 'New Dragon' : 'Edit Dragon'}</h2>
           <AiFillCloseCircle className="closeIcon" onClick={handleCloseModal} />
+        </div>
+
+        <div className="contentP">
+          <span className="contentPIcon"><BiMessageSquareAdd /> </span>
+          <span>Register or Edit a new Dragon</span>
         </div>
 
         <div className="modalFields">
           <input
             type="text"
             name="name"
+            autoFocus
             value = {dragon.name}
             onChange={handleInputChange}
             className="field"
@@ -103,7 +110,7 @@ export default function ModalAdd({ setShowModalAdd, modo, idDragon }) {
               && modified)
             }
           >
-            Add New
+            {modo === 'add' ? 'Add New' : 'Change'}
           </button>
         </div>
 

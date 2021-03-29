@@ -11,8 +11,8 @@
 }
 
 .modalContainer {
-  width: 600px;
-  height: 400px;
+  width: 500px;
+  height: 430px;
   padding: 10px 10px;
   display: flex;
   align-items: center;
@@ -29,7 +29,7 @@
   background-color: #e1392c;
   justify-content: space-between;
   width: 100%;
-  height: 80px;
+  height: 60px;
   padding-left: 30px;
   color: white;
 }
@@ -47,15 +47,28 @@
   font-size: 30px;
 }
 
+.contentP {
+  font-size: 18px;
+  margin-top: 20px;
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+}
+
+.contentPIcon {
+  font-size: 22px;
+  margin: 0 10px 0 10px;
+}
+
 .modalFields {
   display: flex;
   width: 85%;
   align-items: flex-start;
   justify-content: space-between;
   flex-direction: column;
-  height: 100px;
-  margin: 20px;
-  padding: 35px 20px;
+  height: 110px;
+  margin: 25px;
+  padding: 15px 20px;
   border-radius: 5px;
 }
 
@@ -74,17 +87,19 @@
 
 .modalAddButton {
   font-family: 'Teko', sans-serif;
-    color: rgb(255, 255, 255);
-    padding: 5px 15px;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    background-color: #e1392c;
-    border: 1px solid #e1392c;
-    font-size: 20px;
-    cursor: pointer;
-    width: 100px;
-    transition: ease-in 0.2s;
+  color: rgb(255, 255, 255);
+  padding: 5px 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  background-color: #e1392c;
+  border: 1px solid #e1392c;
+  font-size: 20px;
+  cursor: pointer;
+  width: 100px;
+  transition: ease-in 0.2s;
+  margin-top: 20px;
+  letter-spacing: 1px;
 }
 
 .modalAddButton:enabled:hover {
