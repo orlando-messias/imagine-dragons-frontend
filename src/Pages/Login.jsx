@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { loginUser, errorToFalse } from '../store/Login/Login.action';
 // react-icons
 import { BsFillShieldLockFill } from 'react-icons/bs';
+import { GiSeaDragon } from 'react-icons/gi';
 // services
 import {
   passwordValidation,
@@ -88,7 +89,7 @@ export default function Login() {
       <div className="loginContainer">
 
         <div className="icon">
-          <BsFillShieldLockFill />
+          <GiSeaDragon />
         </div>
 
         <p className="title">LOGIN</p>
