@@ -1,11 +1,14 @@
 ## Imagine Dragons App
 
 ### :information_source: Sobre
-Após efetuar login de um usuário básico - *já cadastrado em um banco de dados MongoDB na nuvem* -, a aplicação renderiza cards com informações de Dragões baseados na API **v1/dragon**. 
+Após efetuar o login de um usuário - *já cadastrado em um banco de dados MongoDB na nuvem* -, a aplicação renderiza cards com informações de Dragões baseados na API **v1/dragon**. 
 
 A partir da visualização dos cards o app implementa um CRUD (Create, Read, Update e Delete) utilizando a API **v1/dragon**.
 
-A aplicação é responsiva; Utiliza Redux para gerenciar os dados do usuário logado; CSS puro para estilizações e Telas Modal; Validações com javascript puro.
+- Responsividade;
+- Utiliza Redux para gerenciar os dados do usuário logado;
+- CSS puro para estilizações e Telas Modal;
+- Validações com javascript puro.
 
 ### :camera: Screenshots
 
@@ -20,8 +23,8 @@ A aplicação é responsiva; Utiliza Redux para gerenciar os dados do usuário l
 
 #
 
-### :bulb: Antes de Iniciar
-Acesse e rode o backend para gerenciamento do ***Login*** da aplicação em [dragons-login-backend](https://github.com/orlando-messias/imagine-dragons-backend)
+### :bulb: Antes de Começar
+Acesse e inicialize o backend para o gerenciamento do ***Login*** da aplicação no repositório  [imagine-dragons-backend](https://github.com/orlando-messias/imagine-dragons-backend)
 
 ### :gear: Instalações para o Frontend
 ```
