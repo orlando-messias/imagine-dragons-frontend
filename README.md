@@ -1,15 +1,16 @@
 ## Imagine Dragons App
 
-### :computer: Sobre
+### :information_source: Sobre
 Após efetuar login de um usuário básico - *já cadastrado em um banco de dados MongoDB na nuvem* -, a aplicação renderiza cards com informações de Dragões baseados na API **v1/dragon**. 
 
 A partir da visualização dos cards o app implementa um CRUD (Create, Read, Update e Delete) utilizando a API **v1/dragon**.
 
-Utiliza Redux para gerenciar os dados logados do usuário.
+A aplicação é responsiva; Utiliza Redux para gerenciar os dados do usuário logado; CSS puro para estilizações e Telas Modal; Validações com javascript puro.
 
 ### :camera: Screenshots
 
 <p align="center"><img src="/src/assets/imagesReadme/dragonCards.png"></p>
+
 
 <p align="center"><img src="/src/assets/imagesReadme/topbar.png"></p>
 

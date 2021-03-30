@@ -1,4 +1,4 @@
-import api from '../../services/api';
+import apiLogin from '../../services/apiLogin'
 
 // CONSTS
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
@@ -36,7 +36,7 @@ export const loginUser = (email, password) => {
   return (dispatch) => {
     dispatch(isFetching());
 
-    return api.post('/user/login', { email, password })
+    return apiLogin.post('/user/login', { email, password })
       .then((response) => dispatch(loginSuccess(response.data)))
       .catch(e => dispatch(loginError(e.response.data.message)));
   }
